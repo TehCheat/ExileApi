@@ -68,7 +68,7 @@ namespace ExileCore
         [Menu("HUD VSync")]
         public ToggleNode VSync { get; set; } = new ToggleNode(false);
         [Menu("Font")]
-        public ListNode Font { get; set; } = new ListNode {Values = new List<string> {"Not found"}};
+        public ListNode Font { get; set; } = new ListNode {Values = new List<string> {"Not found"}, Value = "FrizQuadrataITC:15" };
         [Menu("Font size", "Currently not works. Because this option broke calculate how much pixels needs for render.")]
         [IgnoreMenu]
         public RangeNode<int> FontSize { get; set; } = new RangeNode<int>(13, 7, 36);

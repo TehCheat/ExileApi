@@ -54,8 +54,8 @@ namespace ExileCore
             {
                 if (!File.Exists(SETTINGS_FILE_NAME))
                 {
-                    var coreSettings = new CoreSettings();
-                    File.AppendAllText(SETTINGS_FILE_NAME, JsonConvert.SerializeObject(coreSettings, Formatting.Indented));
+                    CoreSettings = new CoreSettings();
+                    File.AppendAllText(SETTINGS_FILE_NAME, JsonConvert.SerializeObject(CoreSettings, Formatting.Indented));
                 }
                 else
                 {
