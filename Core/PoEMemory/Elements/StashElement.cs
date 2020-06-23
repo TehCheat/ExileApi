@@ -21,6 +21,7 @@ namespace ExileCore.PoEMemory.Elements
         //Not fixed
         public Element MoveStashTabLabelsLeft_Button => Address != 0 ? GetObject<Element>(M.Read<long>(Address + 0x2D8, 0x460)) : null;
         public Element MoveStashTabLabelsRight_Button => Address != 0 ? GetObject<Element>(M.Read<long>(Address + 0x2D8, 0x468)) : null;
+        public Element ButtonStashTabListPin => Address != 0 ? GetObject<Element>(M.Read<long>(Address + 0x2D8, 0x450)) : null;
         public int IndexVisibleStash => M.Read<int>(Address + 0x2D8, 0x490);
         public Inventory VisibleStash => GetVisibleStash();
         public IList<string> AllStashNames => GetAllStashNames();
@@ -75,6 +76,12 @@ namespace ExileCore.PoEMemory.Elements
             }
 
             return stashInventoryByIndex;
+        }
+
+        public IList<Element> GetTabListButtons()
+        {
+            var listChild = ViewAllStashPanel.Children.FirstOrDefault(x => x.ChildCount == TotalStashes);
+            return listChild?.Children ?? new List<Element>();
         }
 
         public string GetStashName(int index)
