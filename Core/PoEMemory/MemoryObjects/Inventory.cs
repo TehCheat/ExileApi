@@ -170,6 +170,7 @@ namespace ExileCore.PoEMemory.MemoryObjects
                         {
                             if (item.ChildCount > 1)
                                 list.Add(item[1].AsObject<MetamorphInventoryItem>());
+                        }
                     case InventoryType.UniqueStash:
                         foreach (var item in InvRoot.Children)
                         {
