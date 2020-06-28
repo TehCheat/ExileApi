@@ -265,6 +265,7 @@ namespace ExileCore.PoEMemory.MemoryObjects
                     break;
                 case 0xE:
                     _cacheInventoryType = InventoryType.MetamorphStash;
+                    break;
                 case 0x9:
                     _cacheInventoryType = InventoryType.UniqueStash;
                     break;
